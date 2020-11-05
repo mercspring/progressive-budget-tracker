@@ -8,14 +8,15 @@ const FILES_TO_CACHE = [
     'manifest.webmanifest',
     'styles.css',
     '/icons/icon-192x192.png',
-    '/icons/icon-512x512.png'
+    '/icons/icon-512x512.png',
+    "https://cdn.jsdelivr.net/npm/chart.js@2.8.0"
 ];
 
 // install
 self.addEventListener("install", function (evt) {
     // pre cache image data
     evt.waitUntil(
-        caches.open(DATA_CACHE_NAME).then((cache) => cache.add("/api/images"))
+        caches.open(DATA_CACHE_NAME).then((cache) => cache.add("/api/transaction"))
     );
 
     // pre cache all static assets
